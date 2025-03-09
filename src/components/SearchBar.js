@@ -9,7 +9,6 @@ const SearchBar = ({ onSearch }) => {
         e.preventDefault();
         onSearch(bookId, chapter, verse);
     }
-};
 
 return (
     <form onSubmit={handleSubmit} style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
@@ -34,4 +33,4 @@ return (
       <button type="submit">Buscar</button>
     </form>
   );
-};
+}

@@ -1,6 +1,6 @@
 export const fetchVerses = async (bookId, chapter, verse) => {
     try {
-        const response = await fetch('http://localhost:8080/api/bible/{bookId}/{chapter}/{verse}');
+        const response = await fetch(`http://localhost:8080/api/bible/${bookId}/${chapter}/${verse}`);
 
         if (!response.ok){
             throw new Error('Failed to fetch verses');
