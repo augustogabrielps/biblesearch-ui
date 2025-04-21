@@ -7,8 +7,16 @@ const SearchBar = ({ onSearch }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSearch(bookId, chapter, verse);
-    }
+        console.log("Enviando valores para o App.js:", { bookId, chapter, verse });
+    
+        if (!bookId.trim() || !chapter.trim() || !verse.trim()) {
+            console.error("Campos vazios detectados!");
+            return;
+        }
+        // 🔥 Convertendo para número antes de enviar para evitar erro no backend
+        onSearch(Number(bookId.trim()), Number(chapter.trim()), Number(verse.trim()));
+    };
+    
 
 return (
     <form onSubmit={handleSubmit} style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
@@ -34,3 +42,5 @@ return (
     </form>
   );
 }
+
+export default SearchBar;
