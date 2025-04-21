@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# BibleSearch Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o projeto **frontend** da aplicação BibleSearch, desenvolvido com **React.js**. Ele consome a API backend para permitir que o usuário:
 
-## Available Scripts
+- 🔍 Busque versículos específicos (livro, capítulo, versículo)
+- 📚 Veja a lista completa de livros da Bíblia
+- 🗝️ Faça buscas por palavra-chave com paginação
+- 🧭 Navegue facilmente entre as funcionalidades pela página inicial
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js (Vite ou Create React App)
+- React Router DOM
+- JavaScript moderno (ES6+)
+- Fetch API
+- CSS inline ou externo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Estrutura do Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+biblesearch-ui/
+├── components/
+│   └── SearchBar.js
+├── services/
+│   ├── fetchVerses.js
+│   ├── fetchBooks.js
+│   └── fetchByKeyword.js
+├── pages/
+│   ├── Home.js
+│   ├── SearchVerse.js
+│   ├── BookList.js
+│   └── KeywordSearch.js
+├── App.js
+└── index.js
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Buscar versículo específico
+- Formulário com campos: livro (ID), capítulo, versículo
+- Resultado exibido com o texto do versículo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Listar livros da Bíblia
+- Lista dinâmica dos livros recebidos via `/api/book/all`
 
-### `npm run eject`
+### Buscar por palavra-chave
+- Input de texto
+- Lista de versículos que contêm a palavra digitada
+- Suporte a paginação (opcional)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Como executar localmente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone o repositório
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/seu-usuario/biblesearch-ui.git
+cd biblesearch-ui
+```
 
-## Learn More
+### 2. Instale as dependências
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Inicie a aplicação
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+A aplicação estará disponível em `http://localhost:3000`
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Integração com o Backend
 
-### Making a Progressive Web App
+Certifique-se de que o projeto backend BibleSearch esteja rodando localmente em `http://localhost:8080`.  
+A comunicação entre as camadas é feita via `fetch()` nos serviços localizados em `src/services`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Augusto Gabriel**  
+[GitHub](https://github.com/augustogabrielps)
